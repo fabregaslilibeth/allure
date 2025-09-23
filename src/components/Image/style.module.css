@@ -10,7 +10,7 @@
         height: 350px;
         position: relative;
     }
-    .imageContainer img{
+    /* .imageContainer img{
         object-fit: cover;
-    }
+    } */
 }

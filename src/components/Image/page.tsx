@@ -4,13 +4,19 @@ import Image from 'next/image';
 import styles from './style.module.css';
 import { opacity } from './anim';
 
-export default function Index({src, selectedLink}) {
+interface SelectedLink {
+  isActive: boolean;
+  index: number;
+  src: string;
+}
+
+export default function NavImage({selectedLink, className}: {selectedLink: SelectedLink, className: string}) {
   return (
-    <motion.div variants={opacity} initial="initial" animate={selectedLink.isActive ? "open" : "closed"} className={styles.imageContainer}>
-        <Image 
-        src={`/images/${src}`}
-        fill={true}
-        alt="image"
+    <motion.div variants={opacity} initial="initial" animate={selectedLink?.isActive ? "open" : "closed"} className={styles.imageContainer}>
+        <img 
+          src={selectedLink?.src}
+          className={className}
+          alt="image"
         />
     </motion.div>
   )
