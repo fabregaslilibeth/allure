@@ -18,22 +18,22 @@ export default function Home() {
       
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 w-full h-[160vh] bg-gradient-to-b from-black to-transparent opacity-60 z-2" />
-      <div className="absolute bottom-0 left-0 right-0 w-full h-[40vh] z-3 bg-gradient-to-t from-[#7a6047]"/>
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[100vh] z-3 bg-gradient-to-t from-[#E4DCCF]" />
       
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8 ">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-6 drop-shadow-lg">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-6">
           FARFETCHER
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white text-center mb-8 max-w-4xl drop-shadow-md">
+        <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white text-center mb-8 max-w-4xl">
           We are a team of developers who are passionate about creating beautiful and functional websites.
         </p>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-md text-lg font-semibold transition-colors duration-300 shadow-lg">
+        <button className="bg-[#482763] hover:bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-md text-lg font-semibold transition-colors duration-300 shadow-lg">
           Get Started
         </button>
       </div>
 
-      <div>
+      <div className="relative z-10 bg-[#E4DCCF]">
         <FeaturedServices />
       </div>
 
