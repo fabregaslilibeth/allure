@@ -32,11 +32,11 @@ export default function Index() {
                 <motion.div style={{scale}} className='w-full h-full top-0 absolute flex items-center justify-center'>
                     <div className='relative w-[25vw] h-[25vw]'>
                         <Image
-                            src='https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_1280.jpg'
+                            src='https://cdn.pixabay.com/photo/2025/08/20/11/11/ai-generated-9785435_1280.jpg'
                             fill
                             alt="image"
                             placeholder='blur'
-                            blurDataURL='https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_1280.jpg'
+                            blurDataURL='https://cdn.pixabay.com/photo/2025/08/20/11/11/ai-generated-9785435_1280.jpg'
                             style={{objectFit: 'cover'}}
                         />
                     </div>
