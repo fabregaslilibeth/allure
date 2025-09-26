@@ -5,6 +5,7 @@ export const services = [
       href: "/lash-extension",
       brand: "EVERLASH",
       src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
+      background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
     },
     {
       id: "002",
@@ -12,6 +13,7 @@ export const services = [
       href: "/keratiné-filler-lift",
       brand: "EVERLASH",
       src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
+      background: "https://cdn.pixabay.com/photo/2023/11/24/18/52/cat-8410502_1280.jpg",
     },
     {
       id: "003",
@@ -19,6 +21,7 @@ export const services = [
       href: "/stem-cell-lash-growth",
       brand: "EVERLASH",
       src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
+      background: "https://cdn.pixabay.com/photo/2023/01/07/10/02/leaves-7702922_1280.jpg",
     },
     {
       id: "004",
@@ -26,6 +29,7 @@ export const services = [
       href: "/brow-bomber",
       brand: "EVERBROW",
       src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
+      background: "https://cdn.pixabay.com/photo/2023/05/14/09/39/circle-7992340_1280.jpg",
     },
     {
       id: "005",
@@ -33,6 +37,7 @@ export const services = [
       href: "/brow-face-threading",
       brand: "EVERBROW",
       src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
+      background: "https://cdn.pixabay.com/photo/2023/03/21/18/07/monstera-7867873_1280.jpg",
     },
     {
       id: "006",

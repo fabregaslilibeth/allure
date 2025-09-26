@@ -27,7 +27,7 @@ export default function Index() {
     },[])
 
     return (
-        <div ref={container} className='h-[300vh] relative'>
+        <div ref={container} className='h-[200vh] relative'>
             <div className='sticky top-0 overflow-hidden h-screen'>
                 <motion.div style={{scale}} className='w-full h-full top-0 absolute flex items-center justify-center'>
                     <div className='relative w-[25vw] h-[25vw]'>
