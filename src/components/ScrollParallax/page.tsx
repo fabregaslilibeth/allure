@@ -1,9 +1,8 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import Lenis from "lenis";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function ScrollParallax() {
   const container = useRef(null);
@@ -105,7 +104,6 @@ export default function ScrollParallax() {
                 zIndex: zIndex,
                 transformOrigin: 'center',
                 ...(left && {left}),
-                ...(top && {top}),
                 ...(bottom && {bottom}),
                 ...(color && {backgroundColor: color})
               }}
