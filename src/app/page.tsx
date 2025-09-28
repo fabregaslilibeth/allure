@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ZoomParallax from "@/components/ZoomParallax/page";
+import ScrollParallax2 from "@/components/ScrollParallax2/page";
 import ScrollParallax from "@/components/ScrollParallax/page";
 import FeaturedServices from "@/components/FeaturedServices/page";
 
@@ -40,6 +41,11 @@ export default function Home() {
       <div>
         <ScrollParallax />
       </div>
+
+
+      {/* <div>
+        <ScrollParallax2 />
+      </div> */}
 
       <div>
         <ZoomParallax />
