@@ -12,12 +12,10 @@ export default function ScrollParallax() {
     offset: ["start end", "end start"],
   });
   
-  
   const medium = useTransform(scrollYProgress, [0, 1], [0, -500]);
   const fast = useTransform(scrollYProgress, [0, 1], [0, -1200]);
   const faster = useTransform(scrollYProgress, [0, 1], [0, -1600]);
   const fastest = useTransform(scrollYProgress, [0, 1], [0, -2300]);
-
 
   const images = [
     {
