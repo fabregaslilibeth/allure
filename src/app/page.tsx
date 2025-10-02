@@ -1,8 +1,7 @@
-import Image from "next/image";
 import ZoomParallax from "@/components/ZoomParallax/page";
-import ScrollParallax2 from "@/components/ScrollParallax2/page";
 import ScrollParallax from "@/components/ScrollParallax/page";
 import FeaturedServices from "@/components/FeaturedServices/page";
+import PersonalizedServices from "@/components/PersonalizedServices/page";
 
 export default function Home() {
   return (
@@ -19,7 +18,7 @@ export default function Home() {
       
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 w-full h-[160vh] bg-gradient-to-b from-black to-transparent opacity-60 z-2" />
-      <div className="absolute bottom-0 left-0 right-0 w-full h-[100vh] z-3 bg-gradient-to-t from-[#E4DCCF]" />
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[100vh] z-3 bg-gradient-to-t from-[#b09e8d]" />
       
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8 ">
@@ -29,12 +28,12 @@ export default function Home() {
         <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white text-center mb-8 max-w-4xl">
           We are a team of developers who are passionate about creating beautiful and functional websites.
         </p>
-        <button className="bg-[#482763] hover:bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-md text-lg font-semibold transition-colors duration-300 shadow-lg">
+        <button className="bg-[#b09e8d] hover:bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-md text-lg font-semibold transition-colors duration-300 shadow-lg">
           Get Started
         </button>
       </div>
 
-      <div className="relative z-10 bg-[#E4DCCF]">
+      <div className="relative z-10 bg-[#b09e8d]">
         <FeaturedServices />
       </div>
 
@@ -42,10 +41,9 @@ export default function Home() {
         <ScrollParallax />
       </div>
 
-
-      {/* <div>
-        <ScrollParallax2 />
-      </div> */}
+      <div>
+        <PersonalizedServices />
+      </div>
 
       <div>
         <ZoomParallax />
