@@ -138,7 +138,7 @@ export default function ScrollParallax() {
           );
         })}
         <div className="w-full md:w-1/2 mx-auto flex items-center justify-center z-10 text-center">
-          <h1 className="text-9xl font-light">The Art of Understated Beauty</h1>
+          <h1 className="text-9xl font-light">Science with a Gentle Touch</h1>
         </div>
         </div>
       </div>
