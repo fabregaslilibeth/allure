@@ -1,8 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import styles from './style.module.css';
-import { opacity } from './anim';
+import { opacity } from '@/anim/index';
 
 interface SelectedLink {
   isActive: boolean;

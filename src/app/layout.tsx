@@ -1,8 +1,11 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Aboreto } from 'next/font/google'
 import Header from '../components/Header/page';
 
-const inter = Inter({ subsets: ['latin'] })
+const aboreto = Aboreto({ 
+  subsets: ['latin'],
+  weight: '400'
+})
 
 export const metadata = {
   title: 'Allure',
@@ -12,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={aboreto.className}>
         <Header />
         {children}
       </body>
