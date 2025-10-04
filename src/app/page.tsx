@@ -24,7 +24,7 @@ export default function Home() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8 ">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-6">
-          ALLURE DUBAI
+          ALLURE
         </h1>
         {/* <button className="bg-primary hover:bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-md text-lg font-semibold transition-colors duration-300 shadow-lg">
           Get Started
