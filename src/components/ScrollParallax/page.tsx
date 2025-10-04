@@ -1,23 +1,31 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function ScrollParallax() {
   const container = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
   });
-  
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
+      // When scrollYProgress is 0.1 (10% through the scroll), the container is 10% visible
+      setIsVisible(latest >= 0.10);
+    });
+
+    return () => unsubscribe();
+  }, [scrollYProgress]);
   
   const medium = useTransform(scrollYProgress, [0, 1], [0, -500]);
   const fast = useTransform(scrollYProgress, [0, 1], [0, -1200]);
   const faster = useTransform(scrollYProgress, [0, 1], [0, -1600]);
   const fastest = useTransform(scrollYProgress, [0, 1], [0, -2300]);
-
 
   const images = [
     {
@@ -89,7 +97,7 @@ export default function ScrollParallax() {
   ];
 
   return (
-    <div ref={container} className="relative min-h-[500vh] w-full">
+    <div ref={container} className={`relative min-h-[500vh] w-full transition-colors duration-500 ease-in-out ${isVisible ? 'bg-primary text-white' : 'text-primary'}`}>
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="images flex w-full justify-center relative h-full">
         {images.map(({ src, y, left, bottom, height, width, zIndex, color, opacity }, i) => {

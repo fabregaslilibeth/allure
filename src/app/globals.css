@@ -8,13 +8,16 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: #371f43;
+  --color-secondary: #ead4f5;
+  --color-dry: #b09e8d;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #b09e8d;
+    --background: #ead4f5;
     --foreground: #fff;
   }
 }

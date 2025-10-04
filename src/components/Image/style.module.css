@@ -3,14 +3,10 @@
 }
 
 @media only screen and (min-width: 1000px) {
-   
     .imageContainer{
         display: block;
         width: 500px;
         height: 350px;
         position: relative;
     }
-    /* .imageContainer img{
-        object-fit: cover;
-    } */
 }
