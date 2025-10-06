@@ -1,3 +1,4 @@
+"use client";
 import styles from "./style.module.css";
 import { translate } from "@/anim/index";
 import { motion } from "framer-motion";
