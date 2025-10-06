@@ -20,7 +20,7 @@ const anim = {
 
 export default function Home() {
   return (
-    <main className="min-h-[60vh] flex items-center">
+    <main className="min-h-[60vh] flex items-center overflow-hidden">
       <div className="w-full flex gap-4">
         {services.slice(0, 5).map((service, index) => {
           return <Project service={service} key={index} index={index}/>;
@@ -83,7 +83,7 @@ const Project = ({ service, index }: { service: Service, index: number }) => {
   return (
     <div
       ref={projectRef}
-      className="flex justify-center items-center w-full"
+      className="min-w-[300px] flex flex-col justify-center items-center w-full overflow-hidden"
       style={{
         marginTop: 5 * index + "vh"
       }}

@@ -10,10 +10,8 @@
   --color-foreground: var(--foreground);
   --color-primary: #371f43;
   --color-secondary: #ead4f5;
+  --color-tertiary: #b49dc0;
   --color-dry: #b09e8d;
-  --font-sans: var(--font-assistant);
-  --font-mono: var(--font-geist-mono);
-  --font-aboreto: var(--font-aboreto);
 }
 
 @media (prefers-color-scheme: dark) {

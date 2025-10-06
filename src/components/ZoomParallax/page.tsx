@@ -1,9 +1,10 @@
 "use client";
 
-import Image from 'next/image';
-import { useScroll, useTransform, motion} from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import Lenis from 'lenis';
+import Image from 'next/image';
+import { useScroll, useTransform, motion} from 'framer-motion';
+import { assistant } from '@/fonts/index';
 
 export default function Index() {
     const container = useRef(null);
@@ -52,21 +53,21 @@ export default function Index() {
                 <motion.div className='absolute inset-0 flex items-center justify-center text-primary' style={{ y: rectangleY }}>
                     <div className='relative w-[80%] h-[70%] max-w-2xl'>
                         {/* Transparent top section for eyes */}
-                        <div className='absolute top-0 left-0 right-0 h-[45%] bg-transparent border-12 border-secondary rounded-t-lg'>
+                        <div className='absolute top-0 left-0 right-0 h-[45%] bg-transparent border-12 border-tertiary rounded-t-lg'>
                             {/* This section is transparent to show the eyes */}
                         </div>
                         
                         {/* Solid bottom section with content */}
-                        <div className='absolute bottom-0 left-0 right-0 h-[55%] bg-secondary border border-secondary rounded-b-lg flex flex-col items-center justify-center p-8 space-y-4'>
+                        <div className='absolute bottom-0 left-0 right-0 h-[55%] bg-tertiary rounded-b-lg flex flex-col items-center justify-center p-8 space-y-4'>
                             <h2 className='text-sm font-light tracking-wider'>EVERHOUSE</h2>
                             <h1 className='text-2xl md:text-3xl font-light text-center leading-tight'>
                                 YOUR MOMENT OF GLOW<br />
                                 BEGINS HERE
                             </h1>
                             <p className='text-sm text-center max-w-md leading-relaxed'>
-                                Let's make this about you. A quiet moment for thoughtful treatments designed to restore balance and highlight your natural charm. Because feeling good starts here.
+                                <span className={assistant.className}>Let's make this about you. A quiet moment for thoughtful treatments designed to restore balance and highlight your natural charm. Because feeling good starts here.</span>
                             </p>
-                            <button className='bg-secondary text-[#8C8277] px-6 py-3 rounded-md font-medium hover:bg-[#D4CCC0] transition-colors'>
+                            <button className='bg-tertiary text-[#8C8277] px-6 py-3 rounded-md font-medium hover:bg-[#D4CCC0] transition-colors'>
                                 FIND US
                             </button>
                         </div>
