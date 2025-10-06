@@ -1,11 +1,6 @@
 import './globals.css'
-import { Aboreto } from 'next/font/google'
 import Header from '../components/Header/page';
-
-const aboreto = Aboreto({ 
-  subsets: ['latin'],
-  weight: '400'
-})
+import { aboreto } from '@/fonts/index';
 
 export const metadata = {
   title: 'Allure',

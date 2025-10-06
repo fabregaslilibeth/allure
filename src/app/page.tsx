@@ -2,6 +2,7 @@ import ZoomParallax from "@/components/ZoomParallax/page";
 import ScrollParallax from "@/components/ScrollParallax/page";
 import FeaturedServices from "@/components/FeaturedServices/page";
 import PersonalizedServices from "@/components/PersonalizedServices/page";
+import FAQ from "@/components/FAQ/page";
 
 export default function Home() {
   return (
@@ -44,6 +45,10 @@ export default function Home() {
 
       <div>
         <ZoomParallax />
+      </div>
+
+      <div className="relative z-10">
+        <FAQ />
       </div>
     </div>
   );
