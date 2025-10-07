@@ -10,7 +10,7 @@ export default function Body({ links, selectedLink, setSelectedLink }: { links: 
       {links.map((link: LinkType, index: number) => {
         const { id, title, href, brand, src } = link;
         return (
-          <Link key={`l_${index}`} href={href}>
+          <Link key={`l_${index}`} href={`services/${href}`}>
             <motion.p
               onMouseOver={() => {
                 setSelectedLink({ isActive: true, index, src });
