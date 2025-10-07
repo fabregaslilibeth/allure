@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Lenis from "lenis";
 import "./style.css";
-import { services } from "@/data/services";
+import { services } from "@/data/services Old";
 
 const anim = {
   initial: { width: 0, height: 0 },
