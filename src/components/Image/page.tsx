@@ -13,7 +13,7 @@ export default function NavImage({selectedLink, className}: {selectedLink: Selec
   return (
     <motion.div variants={opacity} initial="initial" animate={selectedLink?.isActive ? "open" : "closed"} className={styles.imageContainer}>
         <img 
-          src={selectedLink?.src}
+          src={`/images/${selectedLink?.src}`}
           className={className}
           alt="image"
         />

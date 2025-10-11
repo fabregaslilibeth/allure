@@ -1,13 +1,13 @@
 export const services = [
     {
       id: "001",
-      title: "LASH EXTENSION",
-      href: "lash-extension",
-      brand: "EVERLASH",
-      tagline: "Longer, thicker, and more voluminous lashes",
+      title: "Skin Rejuvenation",
+      href: "skin-rejuvenation",
+      brand: "Face",
+      tagline: "The World’s First Cold Fiber Laser for Total Skin Rejuvenation",
       byline: "Enhance your natural beauty with our lash extension service. Our expertly crafted lashes add length, volume, and fullness, giving you a glamorous and confident look.",
-      src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-      image: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
+      src: "/services/rejuvenation.jpg",
+      image: "/services/rejuvenation.jpg",
       background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
       features: {
         title: "Why Brow Bomber at EVER?",
@@ -29,15 +29,15 @@ export const services = [
         ],
         features: [
           {
-            title: "Feature 1",
+            title: "No Surgery or Injections Required",
             description: "Description 1",
           },
           {
-            title: "Feature 2",
+            title: "30 minutes or less for a full face treatment*",
             description: "Description 2",
           },
           {
-            title: "Feature 3",
+            title: "Safe For All Skin Types",
             description: "Description 3",
           }
         ]
@@ -66,13 +66,13 @@ export const services = [
     },
     {
       id: "002",
-      title: "BROW LAMINATION",
-      href: "brow-lamination",
-      brand: "EVERLASH",
-      tagline: "Perfectly shaped, fuller brows that last",
+      title: "Biologique Recherche Facials",
+      href: "biologique-recherche-facials",
+      brand: "face",
+      tagline: "Experience the Pearl HydraFacial—the perfect blend of science and luxury for luminous, healthy skin",
       byline: "Transform your brows with our brow lamination service. Achieve the perfect arch and fullness with our semi-permanent treatment that gives you salon-quality brows at home.",
-      src: "https://cdn.pixabay.com/photo/2020/05/15/18/46/eyebrows-5175407_1280.jpg",
-      image: "https://cdn.pixabay.com/photo/2020/05/15/18/46/eyebrows-5175407_1280.jpg",
+      src: "/services/facials.png",
+      image: "/services/facials.png",
       background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
       features: {
         title: "Why Brow Lamination at EVER?",
@@ -128,16 +128,14 @@ export const services = [
     },
     {
       id: "003",
-      title: "FACIAL TREATMENT",
-      href: "facial-treatment",
-      brand: "EVERLASH",
-      tagline: "Rejuvenate and restore your natural glow",
-      byline: "Indulge in our luxurious facial treatments designed to cleanse, exfoliate, and nourish your skin. Our expert estheticians use premium products to reveal your most radiant complexion.",
-      src: "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg",
-      image: "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg",
+      title: "Exosomes Treatment",
+      href: "exosomes-treatment",
+      brand: "Face",
+      tagline: "A Natural, Science-Backed Skin Renewal",
+      src: "/services/exosomes.jpg",
       background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
       features: {
-        title: "Why Choose Our Facial Treatments?",
+        title: "Exosome treatments deliver potent growth factors and bioactive molecules directly to skin cells, helping to address multiple concerns:",
         images: [
           {
             src: "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg",
@@ -154,16 +152,20 @@ export const services = [
         ],
         features: [
           {
-            title: "Customized Treatment",
-            description: "Tailored to your specific skin type and concerns",
+            title: "Anti-Aging and Wrinkle Reduction",
+            description: "Stimulates collagen and elastin production, enhancing skin elasticity and firmness while reducing fine lines and wrinkles.",
           },
           {
-            title: "Premium Products",
-            description: "Professional-grade skincare products for optimal results",
+            title: "Skin Renewal",
+            description: "Promotes cellular regeneration, resulting in smoother, more revitalized, and youthful-looking skin.",
           },
           {
-            title: "Expert Care",
-            description: "Licensed estheticians with years of experience",
+            title: "Pigmentation Correction",
+            description: "Regulates melanin production to improve hyperpigmentation and uneven skin tone.",
+          },
+          {
+            title: "Scar Reduction and Wound Healing",
+            description: "Accelerates tissue repair and minimizes scarring by modulating the inflammatory response and promoting healthy regeneration.",
           }
         ]
       },
@@ -190,16 +192,16 @@ export const services = [
     },
     {
       id: "004",
-      title: "NAIL ART",
-      href: "nail-art",
-      brand: "EVERLASH",
-      tagline: "Express your style with stunning nail designs",
+      title: "Microneedling",
+      href: "microneedling",
+      brand: "Face",
+      tagline: "The world’s first FDA-Approved/No Changesd microneedling device",
       byline: "Transform your nails into works of art with our professional nail services. From classic manicures to intricate nail art, we create beautiful, long-lasting designs that reflect your personality.",
-      src: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
+      src: "/services/microneedling.jpeg",
       image: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
       background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
       features: {
-        title: "Why Choose Our Nail Services?",
+        title: "This advanced treatment is clinically proven to improve:",
         images: [
           {
             src: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
@@ -216,16 +218,20 @@ export const services = [
         ],
         features: [
           {
-            title: "Creative Designs",
-            description: "Unique nail art designs tailored to your style and preferences",
+            title: "Skin Texture",
+            description: "Smooth fine lines and wrinkles for a refined complexion."
           },
           {
-            title: "Long-Lasting Results",
-            description: "Professional techniques ensure your manicure lasts weeks",
+            title: "Acne and Surgical Scars",
+            description: "Effectively minimize the appearance of scars.",
           },
           {
-            title: "Hygienic Environment",
-            description: "Sterilized tools and clean workspace for your safety",
+            title: "Volume and Tone",
+            description: "Restore lost volume and achieve a balanced, even skin tone.",
+          },
+          {
+            title: "Stretch Marks",
+            description: "Reduce their visibility for more uniform skin.",
           }
         ]
       },

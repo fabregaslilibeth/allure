@@ -116,27 +116,7 @@ export const services = [
       href: "/pedicure",
       brand: "EVERNAILS",
       src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-    },
-    {
-      id: "009",
-      title: "WAXING",
-      href: "/waxing",
-      brand: "EVERWAX",
-      src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-    },
-    {
-      id: "010",
-      title: "SEMI PERMANENT MAKE UP",
-      href: "/semi-permanent-make-up",
-      brand: "EVER SPMU",
-      src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-    },
-    {
-      id: "011",
-      title: "EVERBODY",
-      href: "/everybody",
-      brand: "EVERBODY",
-      src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-    },
+    }
+   
   ];
   
