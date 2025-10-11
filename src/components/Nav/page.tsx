@@ -35,7 +35,7 @@ export default function Nav() {
           </div>
           <NavImage
             selectedLink={selectedLink}
-            className="w-full h-full"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="w-full md:w-8/12">

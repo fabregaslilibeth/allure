@@ -6,7 +6,18 @@ import Image from 'next/image';
 import { useScroll, useTransform, motion} from 'framer-motion';
 import { assistant } from '@/fonts/index';
 
-export default function RightParallax({service}) {
+interface RightParallaxProps {
+    service: {
+        id: string;
+        title: string;
+        brand: string;
+        tagline: string;
+        byline?: string;
+        src: string;
+    };
+}
+
+export default function RightParallax({service}: RightParallaxProps) {
     console.log('RightParallax received service:', service);
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -16,12 +27,14 @@ export default function RightParallax({service}) {
 
     const width = useTransform(scrollYProgress, [0, 1], ['50vw', '100vw']);
     const height = useTransform(scrollYProgress, [0, 1], ['100vh', '100vh']);
-    const rectangleY = useTransform(scrollYProgress, [0, 1], ['-60%', '0vh']);
+    const rectangleY = useTransform(scrollYProgress, [0, 1], ['-50%', '0vh']);
+    const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.65, 0.3]);
+    const textOpacity = useTransform(scrollYProgress, [0, 0.1, 0.6], [0, 0.3, 1]);
 
     useEffect( () => {
         const lenis = new Lenis()
     
-        function raf(time) {
+        function raf(time: number) {
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
@@ -36,36 +49,56 @@ export default function RightParallax({service}) {
                 {/* Background Image */}
                 <motion.div className='w-full h-full top-0 absolute flex items-center justify-end'>
                     <motion.div 
-                        className='relative'
-                        style={{width, height}}
+                        className='relative overflow-hidden'
+                        style={{width, height, opacity}}
                     >
                         <Image
-                            src={service.image}
+                            src={`/images${service.src}`}
                             fill
-                            alt="image"
-                            placeholder='blur'
-                            blurDataURL='https://cdn.pixabay.com/photo/2025/08/20/11/11/ai-generated-9785435_1280.jpg'
-                            style={{objectFit: 'cover'}}
+                            alt={service.title}
+                            quality={95}
+                            priority
+                            sizes="100vw"
+                            style={{objectFit: 'cover', objectPosition: 'center'}}
                         />
+                        {/* Subtle gradient overlay for depth */}
+                        <div className='absolute inset-0 bg-gradient-to-l from-black/20 via-transparent to-transparent' />
                     </motion.div>
                 </motion.div>
                 
-                {/* Overlay Rectangle */}
-                <motion.div className='absolute inset-0 flex items-center justify-center text-primary' style={{ x: rectangleY }}>
-                    <div className='relative w-[80%] h-[70%] max-w-2xl'>
-                        {/* Solid bottom section with content */}
-                        <div className='absolute bottom-0 left-0 right-0 h-[55%] bg-tertiary rounded-b-lg flex flex-col items-center justify-center p-8 space-y-4'>
-                            <h2 className='text-sm font-light tracking-wider'>{service.brand}</h2>
-                            <h1 className='text-2xl md:text-3xl font-light text-center leading-tight'>
-                                {service.title}
-                            </h1>
-                            <p className='text-sm text-center max-w-md leading-relaxed'>
-                                <span className={assistant.className}>{service.tagline}</span>
-                            </p>
-                            <button className='bg-tertiary text-[#8C8277] px-6 py-3 rounded-md font-medium hover:bg-[#D4CCC0] transition-colors'>
-                                FIND US
-                            </button>
+                {/* Content Overlay */}
+                <motion.div className='absolute inset-0 flex items-center text-primary' style={{ x: rectangleY, opacity: textOpacity }}>
+                    {/* Vertical Side Text */}
+                    <div className='absolute left-16 top-1/2 -translate-y-1/2 -rotate-90 origin-center'>
+                        <p className='text-sm font-light tracking-[0.3em] uppercase opacity-70'>{service.brand}</p>
+                    </div>
+
+                    {/* Main Content */}
+                    <div className='pl-24 pr-16 max-w-3xl'>
+                        {/* ID and Brand Tag */}
+                        <div className='flex items-center gap-3 mb-8'>
+                            <span className='text-lg font-light'>{service.id}</span>
+                            <span className='text-xs font-light tracking-widest uppercase border border-primary px-3 py-1.5'>
+                                {service.brand}
+                            </span>
                         </div>
+
+                        {/* Title */}
+                        <h1 className='text-6xl md:text-8xl font-light leading-none mb-8'>
+                            {service.title}
+                        </h1>
+
+                        {/* Tagline */}
+                        <h2 className='text-lg md:text-xl font-light mb-6 max-w-md'>
+                            {service.tagline}
+                        </h2>
+
+                        {/* Description */}
+                        {service.byline && (
+                            <p className='text-sm md:text-base font-light leading-relaxed max-w-md opacity-90'>
+                                <span className={assistant.className}>{service.byline}</span>
+                            </p>
+                        )}
                     </div>
                 </motion.div>
             </div>
