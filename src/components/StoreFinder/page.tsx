@@ -5,6 +5,7 @@ import Lenis from 'lenis';
 import Image from 'next/image';
 import { useScroll, useTransform, motion} from 'framer-motion';
 import { assistant } from '@/fonts/index';
+import Button from '@/components/Button/page';
 
 export default function Index() {
     const container = useRef(null);
@@ -20,7 +21,7 @@ export default function Index() {
     useEffect( () => {
         const lenis = new Lenis()
     
-        function raf(time) {
+        function raf(time: number) {
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
@@ -59,17 +60,17 @@ export default function Index() {
                         
                         {/* Solid bottom section with content */}
                         <div className='absolute bottom-0 left-0 right-0 h-[55%] bg-tertiary rounded-b-lg flex flex-col items-center justify-center p-8 space-y-4'>
-                            <h2 className='text-sm font-light tracking-wider'>EVERHOUSE</h2>
+                            <h2 className='text-sm font-light tracking-wider'>ALLURE</h2>
                             <h1 className='text-2xl md:text-3xl font-light text-center leading-tight'>
-                                YOUR MOMENT OF GLOW<br />
-                                BEGINS HERE
+                                WHERE BEAUTY<br />
+                                MEETS INTENTION
                             </h1>
                             <p className='text-sm text-center max-w-md leading-relaxed'>
-                                <span className={assistant.className}>Let's make this about you. A quiet moment for thoughtful treatments designed to restore balance and highlight your natural charm. Because feeling good starts here.</span>
+                                <span className={assistant.className}>Experience personalized care in a serene sanctuary. Every treatment is crafted to enhance your natural radiance and restore your inner balance.</span>
                             </p>
-                            <button className='bg-tertiary text-[#8C8277] px-6 py-3 rounded-md font-medium hover:bg-[#D4CCC0] transition-colors'>
+                            <Button size="medium">
                                 FIND US
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 </motion.div>
