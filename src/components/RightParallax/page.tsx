@@ -30,6 +30,7 @@ export default function RightParallax({service}: RightParallaxProps) {
     const rectangleY = useTransform(scrollYProgress, [0, 1], ['-50%', '0vh']);
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.65, 0.3]);
     const textOpacity = useTransform(scrollYProgress, [0, 0.1, 0.6], [0, 0.3, 1]);
+    const videoOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 0.5, 0]);
 
     useEffect( () => {
         const lenis = new Lenis()
@@ -46,8 +47,33 @@ export default function RightParallax({service}: RightParallaxProps) {
     return (
         <div ref={container} className='h-[200vh] relative'>
             <div className='sticky top-0 overflow-hidden h-screen'>
+                {/* Video Background for Left Side */}
+                <motion.div 
+                    className='absolute inset-0 z-0'
+                    style={{ opacity: videoOpacity }}
+                >
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className='w-full h-full object-cover'
+                    >
+                        <source src="https://cdn.pixabay.com/video/2025/01/13/252435_large.mp4" type="video/mp4" />
+                    </video>
+                    {/* Overlay to soften the video and reduce brightness */}
+                    <div className='absolute inset-0 bg-gradient-to-br from-white/40 via-primary/25 to-primary/35' />
+                    
+                    {/* Large Subtle Title on Left Side */}
+                    <div className='absolute inset-y-0 left-0 w-[50vw] flex items-center justify-center px-12'>
+                        <h2 className='text-7xl md:text-9xl font-extralight text-white/20 leading-tight break-words'>
+                            {service.title}
+                        </h2>
+                    </div>
+                </motion.div>
+
                 {/* Background Image */}
-                <motion.div className='w-full h-full top-0 absolute flex items-center justify-end'>
+                <motion.div className='w-full h-full top-0 absolute flex items-center justify-end z-10'>
                     <motion.div 
                         className='relative overflow-hidden'
                         style={{width, height, opacity}}
@@ -67,7 +93,7 @@ export default function RightParallax({service}: RightParallaxProps) {
                 </motion.div>
                 
                 {/* Content Overlay */}
-                <motion.div className='absolute inset-0 flex items-center text-primary' style={{ x: rectangleY, opacity: textOpacity }}>
+                <motion.div className='absolute inset-0 flex items-center text-primary z-20' style={{ x: rectangleY, opacity: textOpacity }}>
                     {/* Vertical Side Text */}
                     <div className='absolute left-16 top-1/2 -translate-y-1/2 -rotate-90 origin-center'>
                         <p className='text-sm font-light tracking-[0.3em] uppercase opacity-70'>{service.brand}</p>

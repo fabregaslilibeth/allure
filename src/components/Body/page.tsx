@@ -4,13 +4,13 @@ import styles from "./style.module.css";
 import { blur } from "@/anim/index";
 import { Link as LinkType, SelectedLink } from "@/types/index";
 
-export default function Body({ links, selectedLink, setSelectedLink }: { links: LinkType[], selectedLink: SelectedLink, setSelectedLink: (link: SelectedLink) => void }) {
+export default function Body({ links, selectedLink, setSelectedLink, setIsActive }: { links: LinkType[], selectedLink: SelectedLink, setSelectedLink: (link: SelectedLink) => void, setIsActive: (isActive: boolean) => void }) {
   return (
     <div className={styles.body}>
       {links.map((link: LinkType, index: number) => {
         const { id, title, href, brand, src } = link;
         return (
-          <Link key={`l_${index}`} href={`services/${href}`}>
+          <Link key={`l_${index}`} href={`/services/${href}`} onClick={() => setIsActive(false)}>
             <motion.p
               onMouseOver={() => {
                 setSelectedLink({ isActive: true, index, src });

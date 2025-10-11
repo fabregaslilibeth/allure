@@ -192,7 +192,7 @@ export const services = [
     },
     {
       id: "004",
-      title: "Microneedling",
+      title: "Micro Needling",
       href: "microneedling",
       brand: "Face",
       tagline: "The world’s first FDA-Approved/No Changesd microneedling device",
@@ -201,7 +201,7 @@ export const services = [
       image: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
       background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
       features: {
-        title: "This advanced treatment is clinically proven to improve:",
+        title: "This advanced treatment is clinically proven to improve",
         images: [
           {
             src: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",

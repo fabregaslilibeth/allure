@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function ScrollParallax() {
+export default function ServicesParallax() {
   const container = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -153,3 +153,4 @@ export default function ScrollParallax() {
     </div>
   );
 }
+
