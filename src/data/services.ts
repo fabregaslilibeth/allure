@@ -62,7 +62,11 @@ export const services = [
           price: "Price 3",
           image: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
         },
-      ]
+      ],
+      procedure_time: "30 minutes",
+      treatments: "1 treatment every 3-4 weeks",
+      results: "Results will vary from person to person, but you will see a difference in your skin after the first treatment.",
+      recovery_time: "No downtime",
     },
     {
       id: "002",

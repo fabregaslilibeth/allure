@@ -7,6 +7,7 @@ import Image from "next/image";
 import RightParallax from "@/components/RightParallax/page";
 import { assistant } from "@/fonts";
 import ResultsParallax from "@/components/ResultsParallax/page";
+import ProcedureAtAGlance from "@/components/ProcedureAtAGlance/page";
 
 export default function ServicePage() {
   const params = useParams();
@@ -109,6 +110,17 @@ export default function ServicePage() {
           </p>
         </div>
       </div>
+      
+      {/* Procedure at a Glance Section */}
+      <ProcedureAtAGlance 
+        data={{
+          procedure_time: service.procedure_time,
+          treatments: service.treatments,
+          results: service.results,
+          recovery_time: service.recovery_time,
+        }}
+      />
+      
       <ResultsParallax
         images={resultsImages}
       />
