@@ -137,10 +137,7 @@ const ProcedureAtAGlance = ({ data }: ProcedureAtAGlanceProps) => {
           >
             PROCEDURE AT A GLANCE
           </motion.h2>
-          <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto rounded-full"
-            variants={titleVariants}
-          />
+          
         </motion.div>
 
         {/* Procedure Items */}
@@ -164,7 +161,7 @@ const ProcedureAtAGlance = ({ data }: ProcedureAtAGlanceProps) => {
                 }}
               >
                 {/* Card Background */}
-                <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 h-full transition-all duration-300 group-hover:border-amber-500/50 group-hover:shadow-2xl group-hover:shadow-amber-500/10">
+                <div className="relative bg-gradient-to-br from-gray-800/50 to-black/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 h-full transition-all duration-300 group-hover:border-amber-500/50 group-hover:shadow-2xl group-hover:shadow-amber-500/10">
                   {/* Hover glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
