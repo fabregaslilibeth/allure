@@ -5,9 +5,9 @@ export const links = [
       src: "home.png",
     },
     {
-      title: "Locations",
-      href: "/locations",
-      src: "shop.png",
+      title: "Clinics",
+      href: "/clinics",
+      src: "clinics.png",
     },
     {
       title: "About Us",
