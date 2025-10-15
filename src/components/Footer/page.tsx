@@ -14,7 +14,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Made by:</span>Studio Lumio
+          <span>Made by:</span>Allure
         </motion.li>
       </ul>
       <ul>
