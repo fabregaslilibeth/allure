@@ -3,9 +3,7 @@ import { useParams } from "next/navigation";
 import { services } from "@/data/services";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import RightParallax from "@/components/RightParallax/page";
-import { assistant } from "@/fonts";
 import ResultsParallax from "@/components/ResultsParallax/page";
 import ProcedureAtAGlance from "@/components/ProcedureAtAGlance/page";
 
