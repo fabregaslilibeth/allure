@@ -104,7 +104,7 @@ const Project = ({ service, index }: { service: Service, index: number }) => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              {title}
+              {title} zz
             </motion.p>
           </div>
       </motion.div>
