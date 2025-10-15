@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function ScrollParallax() {
+export default function ServicesParallax() {
   const container = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -42,10 +42,10 @@ export default function ScrollParallax() {
     {
       src: "https://cdn.pixabay.com/photo/2023/11/14/23/17/yoga-8388879_1280.jpg",
       y: fast,
-      left: '25.5vw',
+      left: '5.5vw',
       bottom: '-80vh',
-      width: '15vw',
-      height: '40vh',
+      width: '25vw',
+      height: '60vh',
       zIndex: 2,
       color: 'blue',
       opacity: 1
@@ -55,8 +55,8 @@ export default function ScrollParallax() {
       y: faster,
       left: '15vw',
       bottom: '-40vh',
-      height: '25vh',
-      width: '20vh',
+      height: '55vh',
+      width: '40vh',
       zIndex: 3,
       color: 'purple',
       opacity: 1
@@ -88,8 +88,8 @@ export default function ScrollParallax() {
       y: fast,
       left: '80vw',
       bottom: '-80vh',
-      height: '25vh',
-      width: '20vh',
+      height: '45vh',
+      width: '45vh',
       zIndex: 2,
       color: 'pink',
       opacity: 1
@@ -153,3 +153,4 @@ export default function ScrollParallax() {
     </div>
   );
 }
+
