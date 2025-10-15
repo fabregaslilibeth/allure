@@ -1,16 +1,26 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function ScrollParallax() {
+export default function ServicesParallax() {
   const container = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
   });
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
+      // When scrollYProgress is 0.1 (10% through the scroll), the container is 10% visible
+      setIsVisible(latest >= 0.10);
+    });
+
+    return () => unsubscribe();
+  }, [scrollYProgress]);
   
   const medium = useTransform(scrollYProgress, [0, 1], [0, -500]);
   const fast = useTransform(scrollYProgress, [0, 1], [0, -1200]);
@@ -32,10 +42,10 @@ export default function ScrollParallax() {
     {
       src: "https://cdn.pixabay.com/photo/2023/11/14/23/17/yoga-8388879_1280.jpg",
       y: fast,
-      left: '25.5vw',
+      left: '5.5vw',
       bottom: '-80vh',
-      width: '15vw',
-      height: '40vh',
+      width: '25vw',
+      height: '60vh',
       zIndex: 2,
       color: 'blue',
       opacity: 1
@@ -45,8 +55,8 @@ export default function ScrollParallax() {
       y: faster,
       left: '15vw',
       bottom: '-40vh',
-      height: '25vh',
-      width: '20vh',
+      height: '55vh',
+      width: '40vh',
       zIndex: 3,
       color: 'purple',
       opacity: 1
@@ -78,8 +88,8 @@ export default function ScrollParallax() {
       y: fast,
       left: '80vw',
       bottom: '-80vh',
-      height: '25vh',
-      width: '20vh',
+      height: '45vh',
+      width: '45vh',
       zIndex: 2,
       color: 'pink',
       opacity: 1
@@ -87,7 +97,7 @@ export default function ScrollParallax() {
   ];
 
   return (
-    <div ref={container} className="relative min-h-[500vh] w-full">
+    <div ref={container} className={`relative min-h-[500vh] w-full transition-colors duration-500 ease-in-out ${isVisible ? 'bg-primary text-white' : 'text-primary'}`}>
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="images flex w-full justify-center relative h-full">
         {images.map(({ src, y, left, bottom, height, width, zIndex, color, opacity }, i) => {
@@ -131,15 +141,15 @@ export default function ScrollParallax() {
                 fill
                 style={{objectFit: 'cover'}}
               />
-              {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-10 flex items-center justify-center text-white text-2xl font-bold">{i + 1}</div> */}
             </motion.div>
           );
         })}
         <div className="w-full md:w-1/2 mx-auto flex items-center justify-center z-10 text-center">
-          <h1 className="text-9xl font-light">The Art of Understated Beauty</h1>
+          <h1 className="text-9xl font-light">Science with a Gentle Touch</h1>
         </div>
         </div>
       </div>
     </div>
   );
 }
+
