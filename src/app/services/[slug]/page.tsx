@@ -77,7 +77,7 @@ export default function ServicePage() {
       </div>
       <RightParallax service={service} />
 
-      <div className="w-full py-20">
+      {/* <div className="w-full py-20">
         <div className="max-w-6xl mx-auto px-8">
           <div className="my-16">
             <h2 className="text-4xl font-bold text-primary mb-8 text-center">
@@ -110,7 +110,7 @@ export default function ServicePage() {
           </p>
         </div>
       </div>
-      
+       */}
       {/* Procedure at a Glance Section */}
       <ProcedureAtAGlance 
         data={{
