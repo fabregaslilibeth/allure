@@ -1,8 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import styles from './style.module.css';
-import { opacity } from './anim';
+import { opacity } from '@/anim/index';
 
 interface SelectedLink {
   isActive: boolean;
@@ -14,7 +13,7 @@ export default function NavImage({selectedLink, className}: {selectedLink: Selec
   return (
     <motion.div variants={opacity} initial="initial" animate={selectedLink?.isActive ? "open" : "closed"} className={styles.imageContainer}>
         <img 
-          src={selectedLink?.src}
+          src={`/images/${selectedLink?.src}`}
           className={className}
           alt="image"
         />
