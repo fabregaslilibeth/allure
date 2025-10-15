@@ -9,7 +9,7 @@ export const faqData: FAQItem[] = [
     {
       id: 2,
       question: "WHERE IS EVER HOUSE LOCATED? WHAT ARE THE OPENING HOURS?",
-      answer: "Please refer to this link to see each one of salon's operational hour",
+      answer: "Please refer to this link to see each one of clinic's operational hour",
       isLink: true,
       linkText: "link",
       linkUrl: "#"
