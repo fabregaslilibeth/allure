@@ -92,7 +92,7 @@ const ProcedureAtAGlance = ({ data }: ProcedureAtAGlanceProps) => {
   return (
     <div className="relative py-20 px-6 overflow-hidden">
       {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-black to-primary" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-black to-black" />
       
       {/* Animated background elements */}
       <div className="absolute inset-0">
