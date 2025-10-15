@@ -9,7 +9,7 @@ import Link from "next/link";
 import { services } from "@/data/services";
 import { links } from "@/data/links";
 
-export default function Nav() {
+export default function Nav({ setIsActive }: { setIsActive: (isActive: boolean) => void }) {
   const [selectedLink, setSelectedLink] = useState({
     isActive: false,
     index: 0,
@@ -28,14 +28,14 @@ export default function Nav() {
         <div className="w-full lg:w-5/12 order-1 md:order-0">
           <div className="flex flex-col mt-12 lg:mt-24">
             {links.map((link, index) => (
-              <Link href={link?.href} key={index}>
+              <Link href={link?.href} key={index} onClick={() => setIsActive(false)}>
                 <p className="text-[1.5vw] sm:text-[16px] md:text-[26px] uppercase text-gray-700">{link?.title}</p>
               </Link>
             ))}
           </div>
           <NavImage
             selectedLink={selectedLink}
-            className="w-full h-full"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="w-full md:w-8/12">
@@ -43,6 +43,7 @@ export default function Nav() {
             links={services || []}
             selectedLink={selectedLink}
             setSelectedLink={setSelectedLink}
+            setIsActive={setIsActive}
           />
         </div>
       </div>

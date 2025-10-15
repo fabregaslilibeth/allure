@@ -1,7 +1,8 @@
-import ZoomParallax from "@/components/ZoomParallax/page";
-import ScrollParallax from "@/components/ScrollParallax/page";
+import StoreFinder from "@/components/StoreFinder/page";
+import ServicesParallax from "@/components/ServicesParallax/page";
 import FeaturedServices from "@/components/FeaturedServices/page";
 import PersonalizedServices from "@/components/PersonalizedServices/page";
+import FAQ from "@/components/FAQ/page";
 
 export default function Home() {
   return (
@@ -35,7 +36,7 @@ export default function Home() {
       </div>
 
       <div className="relative z-10 bg-secondary">
-        <ScrollParallax />
+        <ServicesParallax />
       </div>
 
       <div className="relative z-10 bg-secondary">
@@ -43,7 +44,11 @@ export default function Home() {
       </div>
 
       <div>
-        <ZoomParallax />
+        <StoreFinder />
+      </div>
+
+      <div className="relative z-10">
+        <FAQ />
       </div>
     </div>
   );
