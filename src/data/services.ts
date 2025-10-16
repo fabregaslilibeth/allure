@@ -44,7 +44,7 @@ export const services = [
       },
       options: [
         {
-          title: "Option 1",
+          title: "Option",
           description: "Description 1",
           price: "Price 1",
           image: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
