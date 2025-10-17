@@ -34,7 +34,7 @@ export const services = [
           },
           {
             title: "30 minutes or less for a full face treatment*",
-            description: "Description 2",
+            description: "Skin Rejuvenation is a non-invasive treatment that uses laser energy to stimulate collagen production and improve the appearance of the skin.",
           },
           {
             title: "Safe For All Skin Types",
