@@ -30,7 +30,7 @@ export const services = [
         features: [
           {
             title: "No Surgery or Injections Required",
-            description: "Description 1",
+            description: "Skin Rejuvenation is a non-invasive treatment that uses laser energy to stimulate collagen production and improve the appearance of the skin.",
           },
           {
             title: "30 minutes or less for a full face treatment*",
