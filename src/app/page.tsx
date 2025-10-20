@@ -26,9 +26,6 @@ export default function Home() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-6">
           ALLURE
         </h1>
-        {/* <button className="bg-primary hover:bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-md text-lg font-semibold transition-colors duration-300 shadow-lg">
-          Get Started
-        </button> */}
       </div>
 
       <div className="relative z-10 bg-secondary">
