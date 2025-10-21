@@ -112,24 +112,19 @@ const Project = ({ category, index }: { category: Category; index: number }) => 
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="relative"
       >
-        <img
-          src={background}
-          alt={title}
-          className="w-full h-full object-cover"
-          style={{ objectFit: "cover" }}
-        ></img>
-        <div className="absolute inset-0 bg-[#7a6047] opacity-20"></div>
-        <div className="absolute inset-0 flex justify-center items-center px-4">
-          <motion.p
-            className="text-white text-2xl font-bold text-center"
-            initial={{ opacity: 0 }}
-            animate={isActive ? { opacity: 1 } : { opacity: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            {title}
-          </motion.p>
-        </div>
+         <img src={background} alt={title} className="w-full h-full object-cover" style={{ objectFit: "cover" }}></img>
+         <div className="absolute inset-0 bg-[#7a6047] opacity-20"></div>
+          <div className="absolute inset-0 flex justify-center items-center px-4">
+            <motion.p 
+              className="text-white text-2xl font-bold text-center"
+              initial={{ opacity: 0 }}
+              animate={isActive ? { opacity: 1 } : { opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              {title} zz
+            </motion.p>
+          </div>
       </motion.div>
     </div>
   );
