@@ -141,7 +141,6 @@ export default function ServicesParallax() {
                 fill
                 style={{objectFit: 'cover'}}
               />
-              {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-10 flex items-center justify-center text-white text-2xl font-bold">{i + 1}</div> */}
             </motion.div>
           );
         })}
