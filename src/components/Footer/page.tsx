@@ -1,3 +1,4 @@
+"use client";
 import styles from "./style.module.css";
 import { translate } from "@/anim/index";
 import { motion } from "framer-motion";
@@ -13,7 +14,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Made by:</span>Studio Lumio
+          <span>Made by:</span>Allure
         </motion.li>
       </ul>
       <ul>
