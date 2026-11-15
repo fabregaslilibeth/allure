@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { bookServiceHref } from "@/data/links";
-import type { Service } from "@/types";
+import type { ServiceSummary } from "@/types";
 import Button from "./Button";
 
 const BACKGROUND_VIDEO = "https://cdn.pixabay.com/video/2025/01/13/252435_large.mp4";
@@ -13,7 +13,7 @@ const BACKGROUND_VIDEO = "https://cdn.pixabay.com/video/2025/01/13/252435_large.
  * Opens as video (left) + photo (right). On scroll the photo widens to
  * full-bleed and fades back while the service copy slides in over it.
  */
-export default function ServiceHero({ service }: { service: Service }) {
+export default function ServiceHero({ service }: { service: ServiceSummary }) {
   const container = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: container, offset: ["start start", "end end"] });
 

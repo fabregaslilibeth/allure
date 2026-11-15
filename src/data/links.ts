@@ -4,7 +4,7 @@ export const navLinks: NavLink[] = [
   { title: "Home", href: "/" },
   { title: "Services", href: "/#services" },
   { title: "About", href: "/#about" },
-  { title: "Locations", href: "/#find-us" },
+  { title: "Clinics", href: "/#find-us" },
   { title: "FAQ", href: "/#faq" },
   { title: "Appointments", href: "/appointment" },
 ];

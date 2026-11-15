@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { slideUp } from "@/lib/anim";
 
 const credits = [
-  { label: "Made by", value: "Studio Lumio" },
+  { label: "Made by", value: "Allure" },
   { label: "Typography", value: "Google Fonts" },
   { label: "Images", value: "Freepik, Envato" },
   { label: "", value: "Privacy Policy · Terms & Conditions" },

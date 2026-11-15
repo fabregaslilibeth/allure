@@ -24,11 +24,17 @@ export default async function ServicePage({ params }: Props) {
   const service = getService((await params).slug);
   if (!service) notFound();
 
+  // Client components get their own plain objects, never ones shared with a
+  // server component's props. In dev, React 19 re-sends server component props
+  // as debug info, and a shared reference left the HTML render hanging
+  // (Next 15.5 / React 19.1). Picking fields also keeps the client payload small.
+  const { id, slug, title, category, tagline, byline, image } = service;
+
   return (
     <>
-      <ServiceHero service={service} />
-      <ProcedureAtAGlance glance={service.glance} />
-      <ServiceDetails service={structuredClone(service)} />
+      <ServiceHero service={{ id, slug, title, category, tagline, byline, image }} />
+      <ProcedureAtAGlance glance={{ ...service.glance }} />
+      <ServiceDetails service={service} />
       {/* Stock imagery, so not labelled as treatment results. */}
       <ParallaxGallery images={galleryImages} title="In good hands" />
     </>

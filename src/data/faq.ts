@@ -7,8 +7,8 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "Where is Allure located? What are the opening hours?",
-    answer: "Each salon keeps its own hours. See them on our",
-    link: { label: "locations", href: "/#find-us" },
+    answer: "Each clinic keeps its own hours. See them on our",
+    link: { label: "clinics", href: "/#find-us" },
   },
   {
     question: "Why do some people say treatments at Allure are more expensive?",

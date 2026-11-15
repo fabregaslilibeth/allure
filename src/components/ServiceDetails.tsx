@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
+import { Info } from "lucide-react";
 import { bookServiceHref } from "@/data/links";
 import type { Service } from "@/types";
 import Button from "./Button";
 
 /** Benefits, the appointment itself, aftercare, precautions and sources. */
 export default function ServiceDetails({ service }: { service: Service }) {
-  if (process.env.BISECT !== "x") return <p>bisect-null</p>;
   return (
     <>
       <section className="border-t border-primary/10 px-4 py-24 md:px-8 md:py-32">
@@ -48,7 +48,7 @@ export default function ServiceDetails({ service }: { service: Service }) {
 
           {service.note && (
             <aside className="mt-6 flex gap-4 rounded-2xl border border-primary/20 bg-tertiary/25 p-6 md:p-8">
-              {/* BISECT <Info aria-hidden className="mt-0.5 size-5 shrink-0" strokeWidth={1.5} /> */}
+              <Info aria-hidden className="mt-0.5 size-5 shrink-0" strokeWidth={1.5} />
               <p className="font-body text-base leading-relaxed">{service.note}</p>
             </aside>
           )}
@@ -60,11 +60,9 @@ export default function ServiceDetails({ service }: { service: Service }) {
                 Not sure it&apos;s right for you? Book a skin consultation first.
               </p>
             </div>
-            {false && (
-              <Button href={bookServiceHref(service.slug)} className="shrink-0">
-                Book this treatment
-              </Button>
-            )}
+            <Button href={bookServiceHref(service.slug)} className="shrink-0">
+              Book this treatment
+            </Button>
           </div>
 
           <div className="mt-12 font-body text-sm opacity-75">

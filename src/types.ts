@@ -52,3 +52,6 @@ export interface Service {
   /** Where the treatment facts come from. */
   sources: Source[];
 }
+
+/** The fields the service hero (a client component) needs. */
+export type ServiceSummary = Pick<Service, "id" | "slug" | "title" | "category" | "tagline" | "byline" | "image">;
