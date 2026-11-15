@@ -1,264 +1,241 @@
-export const services = [
-    {
-      id: "001",
-      title: "Skin Rejuvenation",
-      href: "skin-rejuvenation",
-      brand: "Face",
-      tagline: "The World’s First Cold Fiber Laser for Total Skin Rejuvenation",
-      byline: "Enhance your natural beauty with our lash extension service. Our expertly crafted lashes add length, volume, and fullness, giving you a glamorous and confident look.",
-      src: "/services/rejuvenation.jpg",
-      image: "/services/rejuvenation.jpg",
-      background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
-      features: {
-        title: "Why Brow Bomber at EVER?",
-        images: [
-          {
-            src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-            alt: "Image 1",
-          },
-          
-          {
-            src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-            alt: "Image 2",
-          },
-          
-          {
-            src: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-            alt: "Image 3",
-          },
-        ],
-        features: [
-          {
-            title: "No Surgery or Injections Required",
-            description: "Skin Rejuvenation is a non-invasive treatment that uses laser energy to stimulate collagen production and improve the appearance of the skin.",
-          },
-          {
-            title: "30 minutes or less for a full face treatment*",
-            description: "Skin Rejuvenation is a non-invasive treatment that uses laser energy to stimulate collagen production and improve the appearance of the skin.",
-          },
-          {
-            title: "Safe For All Skin Types",
-            description: "Description 3",
-          }
-        ]
-      },
-      options: [
-        {
-          title: "Option",
-          description: "Description 1",
-          price: "Price 1",
-          image: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-        },
-        {
-          title: "Option 2",
-          description: "Description 2",
-          price: "Price 2",
-          image: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-        },
-        
-        {
-          title: "Option 3",
-          description: "Description 3",
-          price: "Price 3",
-          image: "https://cdn.pixabay.com/photo/2016/10/18/22/19/hands-1751637_1280.jpg",
-        },
-      ],
-      procedure_time: "30 minutes",
-      treatments: "1 treatment every 3-4 weeks",
-      results: "Results will vary from person to person, but you will see a difference in your skin after the first treatment.",
-      recovery_time: "No downtime",
+import type { Service, Source } from "@/types";
+
+// Treatment facts (timings, sessions, recovery, precautions) follow the sources
+// listed on each service. Keep claims hedged ("usually", "often") as they are
+// there: results and recovery vary from person to person.
+
+const AAD_MICRONEEDLING: Source = {
+  label: "American Academy of Dermatology: Microneedling",
+  href: "https://www.aad.org/public/cosmetic/scars-stretch-marks/microneedling-fade-scars",
+};
+
+const AAD_PEELS: Source = {
+  label: "American Academy of Dermatology: Chemical peels FAQs",
+  href: "https://www.aad.org/public/cosmetic/younger-looking/chemical-peels-faqs",
+};
+
+const FDA_EXOSOMES: Source = {
+  label: "U.S. FDA: Public safety notification on exosome products",
+  href: "https://www.fda.gov/vaccines-blood-biologics/safety-availability-biologics/public-safety-notification-exosome-products",
+};
+
+const MICRONEEDLING_AFTERCARE = [
+  "Skip make-up for the first 24 hours so the tiny channels in your skin can close.",
+  "Use only a gentle cleanser and moisturiser for a few days, and pause retinoids and exfoliating acids.",
+  "Wear broad-spectrum sunscreen every day and keep out of direct sun while your skin is sensitive.",
+  "Avoid workouts, saunas and swimming for a day or two.",
+];
+
+const MICRONEEDLING_PRECAUTIONS = [
+  "Have active acne, a cold sore or any skin infection in the area.",
+  "Are taking, or have recently taken, isotretinoin.",
+  "Tend to form keloid or raised scars.",
+  "Are pregnant.",
+];
+
+export const services: Service[] = [
+  {
+    id: "001",
+    slug: "skin-rejuvenation",
+    title: "Skin Rejuvenation",
+    category: "Face",
+    tagline: "Non-ablative fractional laser for smoother texture and a more even tone",
+    byline:
+      "The laser heats thousands of microscopic columns in the deeper layers of the skin while leaving the surface intact, prompting your skin to build new collagen as it repairs.",
+    image: "/images/services/rejuvenation.jpg",
+    glance: {
+      procedureTime: "30–45 minutes, plus time for numbing cream to work",
+      treatments: "Usually a series of 2–4 sessions, spaced about a month apart",
+      results:
+        "Gradual. Texture and tone keep improving for weeks after each session as new collagen forms.",
+      recoveryTime: "Redness and mild swelling for a few hours to a few days",
     },
-    {
-      id: "002",
-      title: "Biologique Recherche Facials",
-      href: "biologique-recherche-facials",
-      brand: "face",
-      tagline: "Experience the Pearl HydraFacial—the perfect blend of science and luxury for luminous, healthy skin",
-      byline: "Transform your brows with our brow lamination service. Achieve the perfect arch and fullness with our semi-permanent treatment that gives you salon-quality brows at home.",
-      src: "/services/facials.png",
-      image: "/services/facials.png",
-      background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
-      features: {
-        title: "Why Brow Lamination at EVER?",
-        images: [
-          {
-            src: "https://cdn.pixabay.com/photo/2020/05/15/18/46/eyebrows-5175407_1280.jpg",
-            alt: "Brow Lamination Before",
-          },
-          {
-            src: "https://cdn.pixabay.com/photo/2020/05/15/18/46/eyebrows-5175407_1280.jpg",
-            alt: "Brow Lamination Process",
-          },
-          {
-            src: "https://cdn.pixabay.com/photo/2020/05/15/18/46/eyebrows-5175407_1280.jpg",
-            alt: "Brow Lamination After",
-          },
-        ],
-        features: [
-          {
-            title: "Semi-Permanent Results",
-            description: "Lasts 6-8 weeks with proper care and maintenance",
-          },
-          {
-            title: "Natural Look",
-            description: "Enhances your natural brow shape without looking overdone",
-          },
-          {
-            title: "Low Maintenance",
-            description: "Wake up with perfectly styled brows every morning",
-          }
-        ]
+    benefits: [
+      { title: "Fine lines", description: "Softens fine lines by stimulating new collagen beneath the surface." },
+      { title: "Rough texture", description: "Smooths uneven, dull-looking skin over a course of sessions." },
+      { title: "Sun damage", description: "Fades sun spots and evens out patchy pigmentation." },
+      { title: "Mild acne scars", description: "Can gradually improve shallow scarring with repeated treatments." },
+    ],
+    visit: [
+      { title: "Consultation", description: "We check your skin and medical history and agree the right settings." },
+      { title: "Numbing", description: "A topical anaesthetic cream is applied and left to take effect." },
+      { title: "Laser", description: "The handpiece passes over your skin. Most people describe a warm, prickling feeling." },
+      { title: "Cool and protect", description: "Your skin is cooled and finished with sunscreen." },
+    ],
+    aftercare: [
+      "Expect warmth like a mild sunburn for a few hours.",
+      "Skin can look slightly bronzed and feel rough for several days as treated cells flake away. Let them shed on their own.",
+      "Keep your routine gentle and pause retinoids and exfoliating acids until your skin settles.",
+      "Wear broad-spectrum sunscreen every day and avoid direct sun.",
+    ],
+    precautions: [
+      "Have a fresh tan or recent sunburn.",
+      "Have a cold sore, infection or open wound in the area.",
+      "Are taking, or have recently taken, isotretinoin.",
+      "Are pregnant.",
+    ],
+    sources: [
+      { label: "Altru Health System: Laser resurfacing", href: "https://www.altru.org/health-library/procedures/laser-resurfacing" },
+      {
+        label: "Mayo Clinic Care Network: Laser resurfacing",
+        href: "https://www.mymlc.com/health-information/tests-and-procedures/l/laser-resurfacing2/",
       },
-      options: [
-        {
-          title: "Classic Brow Lamination",
-          description: "Perfect for first-time clients with natural brows",
-          price: "$85",
-          image: "https://cdn.pixabay.com/photo/2020/05/15/18/46/eyebrows-5175407_1280.jpg",
-        },
-        {
-          title: "Premium Brow Lamination",
-          description: "Includes tinting and shaping for complete transformation",
-          price: "$120",
-          image: "https://cdn.pixabay.com/photo/2020/05/15/18/46/eyebrows-5175407_1280.jpg",
-        },
-        {
-          title: "Brow Lamination + Tint",
-          description: "Full service with color enhancement for dramatic results",
-          price: "$95",
-          image: "https://cdn.pixabay.com/photo/2020/05/15/18/46/eyebrows-5175407_1280.jpg",
-        },
-      ]
+    ],
+  },
+  {
+    id: "002",
+    slug: "biologique-recherche-facials",
+    title: "Biologique Recherche Facials",
+    category: "Face",
+    tagline: "Bespoke facials built on the Biologique Recherche method",
+    byline:
+      "Every facial starts by assessing your skin as it is today, what the French brand calls your Skin Instant©, before moving through its three stages: diagnosis, preparation with Lotion P50, and targeted treatment.",
+    image: "/images/services/facials.png",
+    glance: {
+      procedureTime: "About 60–90 minutes, depending on the protocol",
+      treatments: "A one-off treat, or repeated every few weeks as part of a plan",
+      results: "Skin often looks fresher straight away, and changes build with regular care.",
+      recoveryTime: "None. Any tingling or flushing from the exfoliating lotion usually settles quickly.",
     },
-    {
-      id: "003",
-      title: "Exosomes Treatment",
-      href: "exosomes-treatment",
-      brand: "Face",
-      tagline: "A Natural, Science-Backed Skin Renewal",
-      src: "/services/exosomes.jpg",
-      background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
-      features: {
-        title: "Exosome treatments deliver potent growth factors and bioactive molecules directly to skin cells, helping to address multiple concerns:",
-        images: [
-          {
-            src: "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg",
-            alt: "Facial Treatment Process",
-          },
-          {
-            src: "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg",
-            alt: "Premium Skincare Products",
-          },
-          {
-            src: "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg",
-            alt: "Relaxing Spa Environment",
-          },
-        ],
-        features: [
-          {
-            title: "Anti-Aging and Wrinkle Reduction",
-            description: "Stimulates collagen and elastin production, enhancing skin elasticity and firmness while reducing fine lines and wrinkles.",
-          },
-          {
-            title: "Skin Renewal",
-            description: "Promotes cellular regeneration, resulting in smoother, more revitalized, and youthful-looking skin.",
-          },
-          {
-            title: "Pigmentation Correction",
-            description: "Regulates melanin production to improve hyperpigmentation and uneven skin tone.",
-          },
-          {
-            title: "Scar Reduction and Wound Healing",
-            description: "Accelerates tissue repair and minimizes scarring by modulating the inflammatory response and promoting healthy regeneration.",
-          }
-        ]
-      },
-      options: [
-        {
-          title: "Classic Facial",
-          description: "Deep cleansing, exfoliation, and moisturizing treatment",
-          price: "$95",
-          image: "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg",
-        },
-        {
-          title: "Anti-Aging Facial",
-          description: "Advanced treatment with peptides and antioxidants",
-          price: "$135",
-          image: "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg",
-        },
-        {
-          title: "HydraFacial",
-          description: "Deep cleansing and hydrating treatment for all skin types",
-          price: "$175",
-          image: "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg",
-        },
-      ]
+    benefits: [
+      { title: "Personalised", description: "Products and techniques are chosen for how your skin looks and feels on the day." },
+      { title: "Gentle exfoliation", description: "Lotion P50 exfoliates, rebalances oiliness and helps keep the skin's natural acidity." },
+      { title: "Hydration and glow", description: "Serums and masks are layered to address dehydration and dullness." },
+      { title: "Facial massage", description: "Manual techniques are part of the treatment stage." },
+    ],
+    visit: [
+      { title: "Diagnosis", description: "We look at your skin and ask about your routine, lifestyle and goals." },
+      { title: "Preparation", description: "Cleansing, then Lotion P50 to exfoliate and prepare the skin." },
+      { title: "Treatment", description: "Targeted serums, masks and massage chosen for your skin's needs." },
+      { title: "Home routine", description: "Advice on what to use at home until your next visit." },
+    ],
+    aftercare: [
+      "Keep your routine simple for the rest of the day.",
+      "Avoid strong sun straight after exfoliation and wear sunscreen.",
+    ],
+    precautions: [
+      "Have scratched, broken or irritated skin.",
+      "Are using prescription retinoic acid (tretinoin), as Lotion P50 isn't used alongside it.",
+    ],
+    sources: [
+      { label: "Biologique Recherche: The methodology", href: "https://www.biologique-recherche.com/en-us/pages/methodology" },
+      { label: "Biologique Recherche: Lotion P50", href: "https://www.biologique-recherche.com/en-us/products/lotion-p50" },
+    ],
+  },
+  {
+    id: "003",
+    slug: "exosomes-treatment",
+    title: "Exosomes Treatment",
+    category: "Face",
+    tagline: "Microneedling paired with a topical exosome serum",
+    byline:
+      "Exosomes are tiny vesicles that cells use to pass signals to each other. In skin care they're applied as a serum, usually straight after microneedling. Early research is promising, but the evidence is still limited.",
+    image: "/images/services/exosomes.jpg",
+    glance: {
+      procedureTime: "About 60–75 minutes, including numbing",
+      treatments: "Often booked as a short course, with sessions spaced like microneedling (4–6 weeks apart)",
+      results:
+        "Microneedling builds collagen over weeks to months. Any added benefit from exosomes is still being studied.",
+      recoveryTime: "As for microneedling: redness for a day or two, with minimal downtime",
     },
-    {
-      id: "004",
-      title: "Micro Needling",
-      href: "microneedling",
-      brand: "Face",
-      tagline: "The world’s first FDA-Approved/No Changesd microneedling device",
-      byline: "Transform your nails into works of art with our professional nail services. From classic manicures to intricate nail art, we create beautiful, long-lasting designs that reflect your personality.",
-      src: "/services/microneedling.jpeg",
-      image: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
-      background: "https://cdn.pixabay.com/photo/2023/04/16/07/09/forms-7929260_1280.jpg",
-      features: {
-        title: "This advanced treatment is clinically proven to improve",
-        images: [
-          {
-            src: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
-            alt: "Nail Art Design",
-          },
-          {
-            src: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
-            alt: "Professional Tools",
-          },
-          {
-            src: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
-            alt: "Beautiful Results",
-          },
-        ],
-        features: [
-          {
-            title: "Skin Texture",
-            description: "Smooth fine lines and wrinkles for a refined complexion."
-          },
-          {
-            title: "Acne and Surgical Scars",
-            description: "Effectively minimize the appearance of scars.",
-          },
-          {
-            title: "Volume and Tone",
-            description: "Restore lost volume and achieve a balanced, even skin tone.",
-          },
-          {
-            title: "Stretch Marks",
-            description: "Reduce their visibility for more uniform skin.",
-          }
-        ]
+    benefits: [
+      {
+        title: "Texture and fine lines",
+        description: "Microneedling stimulates collagen; the exosome serum is added as the skin begins to recover.",
       },
-      options: [
-        {
-          title: "Classic Manicure",
-          description: "Traditional manicure with nail shaping and polish",
-          price: "$35",
-          image: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
-        },
-        {
-          title: "Gel Manicure",
-          description: "Long-lasting gel polish with UV curing",
-          price: "$55",
-          image: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
-        },
-        {
-          title: "Nail Art Design",
-          description: "Custom nail art with hand-painted designs",
-          price: "$75",
-          image: "https://cdn.pixabay.com/photo/2017/08/01/11/48/blue-2564660_1280.jpg",
-        },
-      ]
-    }
-  ];
-  
+      {
+        title: "Acne scarring",
+        description: "Microneedling is an established option for acne scars. Exosomes are used here as an add-on.",
+      },
+      {
+        title: "Tone and radiance",
+        description: "Often chosen to help skin look brighter and more even, though evidence for exosomes is early.",
+      },
+    ],
+    visit: [
+      { title: "Consultation", description: "We review your skin, history and expectations before booking a course." },
+      { title: "Numbing", description: "A topical anaesthetic cream is applied for comfort." },
+      { title: "Microneedling", description: "A sterile microneedling pen treats the area." },
+      { title: "Exosome serum", description: "The serum is applied to the freshly treated skin, then the skin is calmed." },
+    ],
+    aftercare: MICRONEEDLING_AFTERCARE,
+    precautions: MICRONEEDLING_PRECAUTIONS,
+    note: "No exosome product is FDA-approved, and the FDA has warned about unapproved exosome products marketed to treat diseases. At Allure, exosomes are used only as a topical skin-care serum and are never injected.",
+    sources: [FDA_EXOSOMES, AAD_MICRONEEDLING],
+  },
+  {
+    id: "004",
+    slug: "microneedling",
+    title: "Micro Needling",
+    category: "Face & body",
+    tagline: "Collagen induction therapy for texture, scars and tone",
+    byline:
+      "A pen with fine, sterile needles makes controlled micro-injuries in the skin. As it heals, your skin produces new collagen and elastin.",
+    image: "/images/services/microneedling.jpeg",
+    glance: {
+      procedureTime: "About 60 minutes, including 20–30 minutes of numbing",
+      treatments: "Usually 3–6 sessions, 4–6 weeks apart, then a maintenance session about once a year",
+      results: "Some improvement within a few weeks. Full results usually take several months.",
+      recoveryTime: "Minimal: redness, or darkening on deeper skin tones, that usually settles within 2–3 days",
+    },
+    benefits: [
+      { title: "Acne and surgical scars", description: "Softens the look of scars as new collagen fills in the skin." },
+      { title: "Fine lines and wrinkles", description: "Refines the skin's surface over a course of sessions." },
+      { title: "Enlarged pores", description: "Can help pores look smaller as the skin firms." },
+      { title: "Stretch marks", description: "Can make stretch marks less noticeable." },
+    ],
+    visit: [
+      { title: "Consultation", description: "We check your skin and take photos so you can track progress." },
+      { title: "Numbing", description: "A topical anaesthetic cream is applied for 20–30 minutes." },
+      { title: "Treatment", description: "The pen is passed over each area. You'll feel vibration and light scratching." },
+      { title: "Calm and protect", description: "A soothing serum and sunscreen finish the session." },
+    ],
+    aftercare: MICRONEEDLING_AFTERCARE,
+    precautions: MICRONEEDLING_PRECAUTIONS,
+    sources: [AAD_MICRONEEDLING],
+  },
+  {
+    id: "005",
+    slug: "chemical-peels",
+    title: "Chemical Peels",
+    category: "Face",
+    tagline: "Light to medium peels that renew the skin's surface",
+    byline:
+      "A chemical solution removes the outer layers of skin in a controlled way, revealing smoother, more even skin as it heals. We match the strength of the peel to your skin and goals.",
+    image: "/images/services/chemical-peels.jpg",
+    glance: {
+      procedureTime: "About 30 minutes",
+      treatments: "Light peels: a series of 3–5, every 2–5 weeks. Medium peels are repeated far less often.",
+      results: "Light peels brighten the skin; texture and tone improve over the series.",
+      recoveryTime: "Light peels: 1–7 days of redness and flaking. Medium peels: 7–14 days.",
+    },
+    benefits: [
+      { title: "Uneven tone", description: "Fades sun spots, freckles and other uneven pigmentation." },
+      { title: "Fine lines", description: "Smooths fine lines, especially around the eyes and mouth." },
+      { title: "Rough texture", description: "Leaves the surface of the skin smoother and brighter." },
+      { title: "Acne", description: "Some peels help treat acne and soften mild acne scarring." },
+    ],
+    visit: [
+      { title: "Prepare", description: "Your skin is cleansed and sensitive areas such as the eyes and lips are protected." },
+      { title: "Apply", description: "The peel is brushed on. Expect warmth or stinging for a few minutes." },
+      { title: "Neutralise", description: "The solution is neutralised or removed at the right moment." },
+      { title: "Soothe and protect", description: "A calming moisturiser and sunscreen finish the treatment." },
+    ],
+    aftercare: [
+      "Let flaking skin shed on its own. Don't pick or peel it.",
+      "Use a gentle cleanser and plain moisturiser, and pause retinoids and exfoliants until healed.",
+      "Protect your skin from the sun every day. After a medium peel this matters for months.",
+    ],
+    precautions: [
+      "Are taking, or have recently taken, isotretinoin.",
+      "Get cold sores. Tell us, as a peel can trigger an outbreak.",
+      "Have broken, sunburnt or irritated skin.",
+      "Are pregnant, as some peel acids aren't recommended.",
+    ],
+    sources: [AAD_PEELS],
+  },
+];
+
+export function getService(slug: string) {
+  return services.find((service) => service.slug === slug);
+}
