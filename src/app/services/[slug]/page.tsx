@@ -35,7 +35,6 @@ export default async function ServicePage({ params }: Props) {
       <ServiceHero service={{ id, slug, title, category, tagline, byline, image }} />
       <ProcedureAtAGlance glance={{ ...service.glance }} />
       <ServiceDetails service={service} />
-      {/* Stock imagery, so not labelled as treatment results. */}
       <ParallaxGallery images={galleryImages} title="In good hands" />
     </>
   );
