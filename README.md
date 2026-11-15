@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Allure
 
-## Getting Started
+Marketing site for Allure, a skin and aesthetics studio. Next.js 15 (App Router), React 19, Tailwind CSS 4, Framer Motion and Lenis.
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # type-checks and lints as part of the build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file..
+- `src/app` — routes: home (`page.tsx`), `services/[slug]` (statically generated from the services data), `appointment` (booking form) and `api/appointments` (receives bookings).
+- `src/components` — page sections. `Header/` holds the fixed header and its full-screen menu.
+- `src/data` — all copy and content: services, FAQ, nav links, gallery images.
+- `src/lib` — fonts, shared motion variants, `cn` helper.
+- `src/types.ts` — content types.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Smooth scrolling comes from one Lenis instance in `components/SmoothScroll.tsx`. Don't create more; use `useLenis()` from `lenis/react` to reach it.
 
-## Learn More
+## Bookings
 
-To learn more about Next.js, take a look at the following resources:
+`/appointment` collects a treatment, date, time and contact details. `?service=<slug>` preselects a treatment (service pages link this way). Validation in `src/lib/booking.ts` is shared by the form and `POST /api/appointments`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The API only validates and acknowledges a request. To actually receive bookings, set `BOOKING_WEBHOOK_URL` in `.env.local` and each request is POSTed there as JSON (for example to a booking system, a form inbox or an email automation).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Placeholders to replace
 
-## Deploy on Vercel
+- Booking hours (`timeSlots`) and the 14-day window live in `src/data/booking.ts` and are placeholders.
+- Gallery and service-hero media are Pixabay URLs. The service-page gallery is stock imagery, so it is deliberately not labelled "Results".
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Content accuracy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Treatment facts in `src/data/services.ts` (session length, number of sessions, recovery, precautions) follow the sources listed on each service and shown on its page (AAD, FDA, Biologique Recherche, Mayo Clinic Care Network, Altru Health). If you change a figure, update or add the source. Prices are intentionally absent until the clinic has real ones.

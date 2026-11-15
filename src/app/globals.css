@@ -1,27 +1,19 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --color-primary: #371f43;
   --color-secondary: #ead4f5;
   --color-tertiary: #b49dc0;
-  --color-dry: #b09e8d;
+
+  --font-display: var(--font-aboreto), ui-serif, Georgia, serif;
+  --font-body: var(--font-assistant), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ead4f5;
-    --foreground: #fff;
-  }
+html {
+  background: var(--color-secondary);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+/* Keep in-page anchors clear of the fixed header. */
+[id] {
+  scroll-margin-top: 5rem;
 }
